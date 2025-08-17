@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+</head>
+<body>
+
+<div id="app"></div>
+
+<script>
+  const { createApp, ref, effect } = Vue
+
+  const count = ref(0);
+
+  const root = document.getElementById('app');
+
+  // 1. 创建并插入静态模板
+  const el = document.createElement('div');
+  root.appendChild(el);
+
+  const btn = document.createElement('button');
+  btn.innerHTML = '点我';
+  root.appendChild(btn);
+
+  // 2. 绑定事件
+  btn.addEventListener('click',()=>{
+    count.value++;
+  })
+
+  // 3. 将响应式数据源与DOM操作直接绑定
+  effect(()=>{
+    // 当count.value变化时，仅更新el的内容
+    el.innerHTML = count.value;
+  })
+</script>
+</body>
+</html>
+
