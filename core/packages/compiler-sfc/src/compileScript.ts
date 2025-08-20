@@ -30,7 +30,7 @@ import {
   SourceMapConsumer,
   SourceMapGenerator,
 } from 'source-map-js'
-import {
+import {CompilerVapor
   normalScriptDefaultVar,
   processNormalScript,
 } from './script/normalScript'

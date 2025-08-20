@@ -1076,7 +1076,6 @@ export function baseParse(input: string, options?: ParserOptions): RootNode {
     tokenizer.delimiterOpen = toCharCodes(delimiters[0])
     tokenizer.delimiterClose = toCharCodes(delimiters[1])
   }
-
   const root = (currentRoot = createRoot([], input))
   tokenizer.parse(currentInput)
   root.loc = getLoc(0, input.length)

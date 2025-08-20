@@ -82,15 +82,9 @@ css: |
   }
 ---
 
-## Vue Vapor Mode 深度解析
+## Vue Vapor Mode 解析
 
 从 vDOM 编译优化到 Vapor Mode 的演进之路
-
-<div class="pt-12">
-  <span @click="$slidev.nav.next" class="px-2 py-1 rounded cursor-pointer" hover="bg-white bg-opacity-10">
-    开始探索 <carbon:arrow-right class="inline"/>
-  </span>
-</div>
 
 ---
 transition: fade-out
@@ -101,18 +95,16 @@ transition: fade-out
 <div class="grid grid-cols-2 gap-8 mt-8">
 <div>
 
-### 📚 基础篇
-- **vDOM 编译优化** - 现代前端框架的性能优化之路
-- **静态提升** - 避免重复创建静态节点
-- **补丁标志** - 精细化的动态节点更新策略
+### **vDOM 编译优化**
+- **静态提升**
+- **补丁标志** 
 
 </div>
 <div>
 
-### 🚀 进阶篇
-- **Vapor Mode** - 革命性的编译时优化方案
-- **性能对比** - 传统 vDOM vs Vapor Mode
-- **技术细节** - 精确的响应式绑定机制
+###  **Vapor Mode** 
+- **性能对比**
+- **技术细节**
 
 </div>
 </div>
@@ -128,9 +120,9 @@ class: text-center
 
 ---
 
-## 虚拟 DOM 简介
+## vDOM 简介
 
-虚拟 DOM 是一种用于描述真实 DOM 结构的树状数据结构
+vDOM 是一种用于描述真实 DOM 结构的树状数据结构
 
 对于VUE来说，其基于 vDOM 的渲染系统将我们代码段中的代码转换为实际的 DOM 节点。
 
@@ -140,7 +132,7 @@ class: text-center
 
 ---
 
-## 虚拟 DOM 简介
+## vDOM 简介
 
 解决了那些核心问题？
 
@@ -432,7 +424,7 @@ class: text-center
 
 - 维护真实 DOM 树
 - **额外维护完整的 VNode 树**
-- 复杂应用带来双倍内存占用
+- 复杂应用带来巨大内存占用
 
 </div>
 <div>
@@ -681,6 +673,11 @@ vDOM
 </a>
 </div>
 </div>
+---
+
+## 如何实现无虚拟 dom 还能去精准操控 dom？
+
+<img src="./img/compiler-vapor.drawio.png" alt="" width="650" class="mx-auto mt-4" />
 
 ---
 layout: center
